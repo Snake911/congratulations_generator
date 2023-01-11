@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { Congratulation } from '../Congratulation/Congratulation';
 import { Line } from '../Line/Line';
 
-export const Generator = () => {
+export const Generator = (props) => {
   const [columns, setColumns] = useState([]);
   const [parts, setParts] = useState([]);
   const [congratulation, setCongratulation] = useState('');
+
+  const { file } = useParams();
+
 
   const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -19,13 +23,13 @@ export const Generator = () => {
   } 
 
   useEffect(() => {
-    fetch('/birth_f.json')
+    fetch(`/${file || 'birth_f'}.json`)
     .then(res => res.json())
     .then(res => {
       setColumns(res);
     })
     .catch(err => console.error(err));
-  }, []);
+  }, [file]);
 
   useEffect(() => {
       const result = [];

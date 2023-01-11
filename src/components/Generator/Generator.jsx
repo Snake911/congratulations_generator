@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { Congratulation } from '../Congratulation/Congratulation';
 import { Line } from '../Line/Line';
@@ -44,6 +44,7 @@ export const Generator = (props) => {
 
   return (
     <>
+      <Link to="/">На главную</Link>
       <ul>
         {
           parts.map((part, index) => {

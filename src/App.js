@@ -2,10 +2,10 @@ import {
   BrowserRouter as Router,
   Routes ,
   Route,
-  Link,
 } from 'react-router-dom';
 
 import { Generator } from './components/Generator/Generator';
+import { Home } from './components/Home/Home';
 
 
 function App() {
@@ -16,13 +16,7 @@ function App() {
         <Route path="/generator/" element={<Generator />} >
           <Route path="/generator/:file" element={<Generator />} />
         </Route>          
-        <Route path="/" element={
-          <div>
-            <Link to="/generator/birth_f">День рождение девушки</Link>
-            <Link to="/generator/new_year">Новый год</Link>
-          </div>
-        } />
-          
+        <Route path="/" element={<Home />} />          
       </Routes>
       </Router>
     </div>

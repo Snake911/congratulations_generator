@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { Congratulation } from './components/Congratulation/Congratulation';
+import { Line } from './components/Line/Line';
 
 function App() {
   const [columns, setColumns] = useState([]);
@@ -15,6 +17,8 @@ function App() {
     newParts[column][1] = columns[column][randomIntFromInterval(1, columns[column].length - 1)];
     setParts(newParts);
   }
+
+  
 
   useEffect(() => {
     fetch('/birth_f.json')
@@ -38,9 +42,13 @@ function App() {
   return (
     <div className="App">
       <ul>
-        {parts.map((part, index) => <li key={part[0]}>{part[0]} {part[1]} <button onClick={() => changeParts(index)}>поменять</button></li>)}
+        {
+          parts.map((part, index) => {
+            return <Line part={part} index={index} changeParts={changeParts} key={part[0]} />
+          })
+        }
       </ul>
-      <h2>{congratulation}</h2>
+      <Congratulation congratulation={congratulation}/>
     </div>
   );
 }

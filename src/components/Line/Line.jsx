@@ -1,5 +1,4 @@
-export const Line = ({ part, changeParts, index }) => {
- 
+export const Line = ({ part, changeParts, index }) => { 
   
   return (
         <>

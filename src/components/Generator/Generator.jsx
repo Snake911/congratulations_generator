@@ -13,14 +13,14 @@ export const Generator = (props) => {
 
 
   const randomIntFromInterval = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) + min)
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   const changeParts = (column) => {
     const newParts = [...parts];
     newParts[column][1] = columns[column][randomIntFromInterval(1, columns[column].length - 1)];
     setParts(newParts);
-  } 
+  }
 
   useEffect(() => {
     fetch(`/${file || 'birth_f'}.json`)

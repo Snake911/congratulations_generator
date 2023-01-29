@@ -1,0 +1,27 @@
+.line {
+  display: flex;
+  align-items: center;
+}
+
+.lineRegenerator {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: url('../../../public/images/regenerator.svg') no-repeat center transparent;
+  margin-right: 16px;
+  padding: 0;
+  border: 0;
+}
+
+.lineRegenerator:hover {
+  animation: rotate 2s infinite ease;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

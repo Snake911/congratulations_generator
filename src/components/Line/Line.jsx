@@ -1,9 +1,10 @@
-export const Line = ({ part, changeParts, index }) => { 
-  
+import './Line.css';
+
+export const Line = ({ part, changeParts, index }) => {   
   return (
-        <>
-          <li>{part[0]} {part[1]}</li>
-          <button onClick={() => changeParts(index)}>поменять</button>
-        </>
+        <div className='line'>
+          <button className='lineRegenerator' onClick={() => changeParts(index)}></button>
+          <li>{part[0]} {part[1]}</li>          
+        </div>
   );
 }

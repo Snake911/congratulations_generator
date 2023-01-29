@@ -1,3 +1,5 @@
+import './Congratulation.css';
+
 export const Congratulation = ({ congratulation }) => {
   const copyText = () => {
     const type = "text/plain";
@@ -10,5 +12,5 @@ export const Congratulation = ({ congratulation }) => {
       console.log(err)
     });   
   }
-  return <h2 title="Скопировать" onClick={copyText}>{congratulation}</h2>
+  return <div className='congratulationContainer' title="Скопировать" onClick={copyText}><p>{congratulation}</p></div>;
 }

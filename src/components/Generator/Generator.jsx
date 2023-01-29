@@ -5,6 +5,7 @@ import { Congratulation } from '../Congratulation/Congratulation';
 import { Line } from '../Line/Line';
 
 export const Generator = (props) => {
+  const [string, setString] = useState(1);
   const [columns, setColumns] = useState([]);
   const [parts, setParts] = useState([]);
   const [congratulation, setCongratulation] = useState('');
@@ -18,8 +19,26 @@ export const Generator = (props) => {
 
   const changeParts = (column) => {
     const newParts = [...parts];
-    newParts[column][1] = columns[column][randomIntFromInterval(1, columns[column].length - 1)];
+    let newString = string;
+    while(newString === string) {
+      newString = randomIntFromInterval(1, columns[column].length - 1);
+    }
+    setString(newString)
+    newParts[column][1] = columns[column][string];
     setParts(newParts);
+  }
+
+  const changeAllParts = () => {
+    columns.forEach((_, column) => {
+      const newParts = [...parts];
+      let newString = string;
+      while(newString === string) {
+        newString = randomIntFromInterval(1, columns[column].length - 1);
+      }
+      setString(newString)
+      newParts[column][1] = columns[column][string];
+      setParts(newParts);
+    });
   }
 
   useEffect(() => {
@@ -33,9 +52,9 @@ export const Generator = (props) => {
 
   useEffect(() => {
       const result = [];
-      columns.map(column => result.push([column[0], column[randomIntFromInterval(1, column.length - 1)]]))
+      columns.map(column => result.push([column[0], column[string]]))
       setParts(result);
-  }, [columns]);
+  }, [columns, string]);
 
   useEffect(() => {
     const str = parts.map((part) => `${part[0]} ${part[1]}`).join(' ');
@@ -45,6 +64,7 @@ export const Generator = (props) => {
   return (
     <>
       <Link to="/">На главную</Link>
+      <button onClick={() => changeAllParts()}>Сгенирировать поздравление</button>
       <ul>
         {
           parts.map((part, index) => {

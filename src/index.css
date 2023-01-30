@@ -1,0 +1,52 @@
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  display: block;
+  padding: 16px 35px;
+  background: var(--color-black);
+  color: var(--color-white);
+  width: fit-content;
+  border-radius: 3em;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 40px;
+  background:  linear-gradient(180deg, #938FED 0%, #BCE9EF 100%);
+}
+
+.limiter {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-white);
+}

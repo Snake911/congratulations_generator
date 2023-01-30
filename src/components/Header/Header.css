@@ -1,0 +1,15 @@
+header {
+  position: relative;
+}
+
+h1 {
+  padding: 0 70px;
+  margin-bottom: 32px;
+}
+
+.backLink {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

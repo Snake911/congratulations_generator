@@ -1,0 +1,22 @@
+.generator_page h2 {
+  color: var(--color-white);
+  text-align: center;
+  font-weight: 400;
+  font-size: 26px;
+  margin-bottom: 48px;
+}
+
+.generatorAll {
+  margin: 0 auto 48px;
+}
+
+.generatorContainer {
+  padding: 36px 30px;
+  background: var(--color-white);
+  border-radius: 25px;
+}
+
+.generatorParts {
+  display: grid;
+  gap: 16px;
+}

@@ -23,18 +23,18 @@ ul {
 
 button {
   display: block;
-  padding: 16px 35px;
+  padding: 1rem 2rem;
   background: var(--color-black);
   color: var(--color-white);
   width: fit-content;
-  border-radius: 3em;
-  font-size: 1.5rem;
+  border-radius: 3rem;
+  border: 0;
   cursor: pointer;
 }
 
 .App {
   min-height: 100vh;
-  padding: 40px;
+  padding: 40px 0;
   background:  linear-gradient(180deg, #938FED 0%, #BCE9EF 100%);
 }
 
@@ -49,4 +49,22 @@ h1 {
   font-size: 2rem;
   font-weight: 400;
   color: var(--color-white);
+  padding: 0 60px;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .limiter {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 668px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .limiter {
+    padding: 0;
+  }
 }

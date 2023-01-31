@@ -69,8 +69,7 @@ export const Generator = (props) => {
 
   return (
     <div className={classes}>
-      <h2>{name}</h2>
-      <button className="generatorAll" onClick={() => changeAllParts()}>Сгенирировать поздравление</button>
+      <h2>{name}</h2>      
       <div className="generatorContainer">
         <ul className='generatorParts'>
           {
@@ -80,6 +79,7 @@ export const Generator = (props) => {
           }
         </ul>
         <Congratulation congratulation={congratulation}/>
+        <button className="generatorAll" onClick={() => changeAllParts()}>Обновить поздравление</button>
       </div>
     </div>
   )

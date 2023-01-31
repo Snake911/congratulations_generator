@@ -2,14 +2,23 @@ header {
   position: relative;
 }
 
-h1 {
-  padding: 0 70px;
-  margin-bottom: 32px;
-}
-
 .backLink {
   position: absolute;
   left: 0;
   top: 50%;
+  width: 50px;
   transform: translateY(-50%);
+}
+
+.backLink img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 668px) {
+  .backLink {
+    left: 10px;
+    width: 35px;
+  }
 }

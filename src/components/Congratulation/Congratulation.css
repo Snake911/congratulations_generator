@@ -8,19 +8,24 @@
 }
 
 .congratulationContainer p {
-  margin-bottom: 90px;
+  margin-bottom: 25px;
+  min-height: 150px;
+  line-height: 1.2;
 }
 
 .congratulationContainer::after {
-  content: "";
+  content: "Скопировать";
   display: block;
-  width: 30px;
-  height: 30px;
-  background: url('../../../public/images/copy.svg') no-repeat center/contain transparent;
   position: absolute;
   bottom: 20px;
-  right: 15px;
+  left: 50%;
+  transform: translate(-50%);
   opacity: .7;
+  transition: all .3s ease;
+}
+
+.congratulationContainer.active::after {
+  content: "Скопировано";
 }
 
 .congratulationContainer:hover::after {

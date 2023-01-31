@@ -5,16 +5,18 @@
 
 .lineRegenerator {
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
+  min-width: 27px;
+  min-height: 27px;
   background: url('../../../public/images/regenerator.svg') no-repeat center transparent;
   margin-right: 16px;
   padding: 0;
   border: 0;
 }
 
-.lineRegenerator:hover {
-  animation: rotate 2s infinite ease;
+.lineRegenerator.active {
+  animation: rotate 1.5s ease;
 }
 
 @keyframes rotate {

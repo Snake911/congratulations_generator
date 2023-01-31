@@ -55,6 +55,10 @@ export const Generator = (props) => {
   }, [page]);
 
   useEffect(() => {
+    document.title = name;
+  }, [name]);
+
+  useEffect(() => {
       const result = [];
       columns.map((column, index) => result.push([column[0], column[randomIntFromInterval(1, columns[index].length - 1)]]))
       setParts(result);

@@ -2,14 +2,16 @@
   gap: 32px;
   font-size: 1.5rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   max-width: 1110px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .menu li {
   height: 320px;
-  width: calc(33% - 16px);
+  width: calc(33% - 21px);
 }
 
 .menu li a {
@@ -22,4 +24,18 @@
   background-color: var(--color-white);
   padding: 36px 30px;
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .menu li {
+    height: 300px;
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 668px) {
+  .menu li {
+    height: 240px;
+    width: 100%;
+  }
 }

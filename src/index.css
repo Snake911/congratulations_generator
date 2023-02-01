@@ -1,7 +1,7 @@
 :root {
   --color-white: #FFFFFF;
   --color-black: #000000;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
 
@@ -35,11 +35,10 @@ button {
 .App {
   min-height: 100vh;
   padding: 40px 0;
-  background:  linear-gradient(180deg, #938FED 0%, #BCE9EF 100%);
 }
 
 .limiter {
-  max-width: 1560px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -48,7 +47,6 @@ h1 {
   text-align: center;
   font-size: 2rem;
   font-weight: 400;
-  color: var(--color-white);
   padding: 0 60px;
   margin-bottom: 1.5rem;
 }

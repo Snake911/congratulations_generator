@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { Congratulation } from '../Congratulation/Congratulation';
 import { Line } from '../Line/Line';
+import { LineSkeleton } from '../Line/Skeleton';
 
 import './Generator.css';
 
@@ -76,10 +77,16 @@ export const Generator = (props) => {
       <h2>{name}</h2>      
       <div className="generatorContainer">
         <ul className='generatorParts'>
-          {
+          {parts.length ?
             parts.map((part, index) => {
               return <Line part={part} index={index} changeParts={changeParts} key={part[0]} />
             })
+            : <>
+                <LineSkeleton />
+                <LineSkeleton />
+                <LineSkeleton />
+                <LineSkeleton />
+              </>
           }
         </ul>
         <Congratulation congratulation={congratulation}/>

@@ -8,13 +8,15 @@
 
 .generatorAll {
   margin: 2rem auto 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .generatorContainer {
   padding: 36px 30px;
   background: var(--color-white);
   border-radius: 40px;
+  border: 1px solid #EEE;
 }
 
 .generatorParts {

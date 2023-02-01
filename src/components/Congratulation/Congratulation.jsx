@@ -9,9 +9,10 @@ export const Congratulation = ({ congratulation }) => {
         await navigator.clipboard.write([
           new ClipboardItem({ [type]: blob }),
         ]);
-        e.target.parentElement.classList.add('active')
+        const container = document.querySelector('.congratulationContainer');
+        container.classList.add('active')
         setTimeout(() => {
-            e.target.parentElement.classList.remove('active')
+          container.classList.remove('active')
           }, 2000);
       } catch (err) {
         console.error(err);
@@ -20,7 +21,7 @@ export const Congratulation = ({ congratulation }) => {
     copy();
   }
   return (
-  <div className='congratulationContainer' title="Скопировать" onClick={(e) => copyText(e)}>
+  <div className='congratulationContainer' title="Скопировать" onClick={copyText}>
     <p>{congratulation}</p>
   </div>);
 }

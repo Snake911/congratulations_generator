@@ -11,7 +11,7 @@
 
 .menu li {
   height: 320px;
-  width: calc(33% - 21px);
+  width: calc(50% - 16px);
 }
 
 .menu li a {
@@ -24,6 +24,7 @@
   background-color: var(--color-white);
   padding: 36px 30px;
   text-align: center;
+  border: 1px solid #DDD;
 }
 
 @media (max-width: 1024px) {

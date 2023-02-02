@@ -1,6 +1,6 @@
 import './Congratulation.css';
 
-export const Congratulation = ({ congratulation }) => {
+export const Congratulation = ({ congratulation, copy, setCopy }) => {
   const copyText = (e) => {
     async function copy() {
       try {
@@ -9,19 +9,19 @@ export const Congratulation = ({ congratulation }) => {
         await navigator.clipboard.write([
           new ClipboardItem({ [type]: blob }),
         ]);
-        const container = document.querySelector('.congratulationContainer');
-        container.classList.add('active')
+        setCopy(true);
         setTimeout(() => {
-          container.classList.remove('active')
-          }, 2000);
+          setCopy(false);
+        }, 2000);
       } catch (err) {
         console.error(err);
       }
     }
     copy();
   }
+  const classes = `congratulationContainer${copy ? ' active' : ''}`;
   return (
-  <div className='congratulationContainer' title="Скопировать" onClick={copyText}>
+  <div className={classes} onClick={copyText}>
     <p>{congratulation}</p>
   </div>);
 }

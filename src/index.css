@@ -1,6 +1,6 @@
 :root {
   --color-white: #FFFFFF;
-  --color-black: #000000;
+  --color-black: #000616;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
@@ -46,12 +46,16 @@ button {
 h1 {
   text-align: center;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 700;
   padding: 0 60px;
   margin-bottom: 1.5rem;
 }
 
 @media (max-width: 1024px) {
+  .App {
+    padding: 20px 0;
+  }
+
   .limiter {
     padding: 0 20px;
   }

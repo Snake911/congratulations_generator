@@ -5,10 +5,10 @@
 
 .lineRegenerator {
   display: block;
-  width: 27px;
-  height: 27px;
-  min-width: 27px;
-  min-height: 27px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
   background: url('../../../public/images/regenerator.svg') no-repeat center transparent;
   margin-right: 16px;
   padding: 0;
@@ -16,7 +16,7 @@
 }
 
 .lineRegenerator.active {
-  animation: rotate 1.5s ease;
+  animation: rotate .75s ease;
 }
 
 @keyframes rotate {
@@ -24,6 +24,6 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
   }
 }

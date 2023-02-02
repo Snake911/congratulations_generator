@@ -14,7 +14,7 @@ export const Header = () => {
         <Link to="/" className='backLink'><img src="/images/arrow.svg" alt="На главную" /></Link> 
         : null
       }
-      <h1>Генератор поздравления</h1>
+      <h1>Генератор поздравлений</h1>
     </header>
   );
 }

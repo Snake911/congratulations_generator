@@ -13,6 +13,7 @@ export const Generator = (props) => {
   const [parts, setParts] = useState([]);
   const [congratulation, setCongratulation] = useState('');
   const [name, setName] = useState('');
+  const [copy, setCopy] = useState(false);
 
   const { file } = useParams();
   const page = file || 'birth_f';
@@ -30,6 +31,7 @@ export const Generator = (props) => {
     setString(newString)
     newParts[column][1] = columns[column][string];
     setParts(newParts);
+    setCopy(false);
   }
 
   const changeAllParts = () => {
@@ -42,6 +44,7 @@ export const Generator = (props) => {
       setString(newString)
       newParts[column][1] = columns[column][string];
       setParts(newParts);
+      setCopy(false);
     });
   }
 
@@ -89,8 +92,8 @@ export const Generator = (props) => {
               </>
           }
         </ul>
-        <Congratulation congratulation={congratulation}/>
-        <button className="generatorAll" onClick={() => changeAllParts()}>Обновить поздравление</button>
+        <button className="generatorAll" onClick={() => changeAllParts()}>Обновить все строки</button>
+        <Congratulation congratulation={congratulation} copy={copy} setCopy={setCopy}/>        
       </div>
     </div>
   )

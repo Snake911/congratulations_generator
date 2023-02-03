@@ -49,11 +49,11 @@ export const Generator = (props) => {
   }
 
   useEffect(() => {
-    fetch(`/settings/${page}.json`)
+    fetch(`/settings/data.json`)
     .then(res => res.json())
     .then(res => {
-      setColumns(res.strings);
-      setName(res.name);
+      setColumns(res[page].strings);
+      setName(res[page].name);
     })
     .catch(err => console.error(err));
   }, [page]);

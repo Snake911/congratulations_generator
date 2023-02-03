@@ -10,9 +10,9 @@ const animationLine = (e) => {
 
 export const Line = ({ part, changeParts, index }) => {   
   return (
-        <div className='line'>
-          <button className='lineRegenerator' onClick={(e) => {changeParts(index); animationLine(e)}}></button>
-          <li>{part[0]} {part[1]}</li>          
-        </div>
+        <li className='line'>
+          <button className='lineRegenerator' onClick={(e) => {changeParts(index); animationLine(e)}} title={`Обновить строку ${index + 1}`}></button>
+          <div>{part[0]} {part[1]}</div>          
+        </li>
   );
 }

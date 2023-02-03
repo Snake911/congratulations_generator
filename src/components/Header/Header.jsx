@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <header>
       { window.location.pathname !== '/' ? 
-        <Link to="/" className='backLink'><img src="/images/arrow.svg" alt="На главную" /></Link> 
+        <Link to="/" className='backLink'><img src="/images/arrow.svg" alt="На главную" width={50}/></Link> 
         : null
       }
       { window.location.pathname !== '/' ? 

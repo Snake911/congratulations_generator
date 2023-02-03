@@ -1,7 +1,7 @@
 import './Congratulation.css';
 
 export const Congratulation = ({ congratulation, copy, setCopy }) => {
-  const copyText = (e) => {
+  const copyText = () => {
     async function copy() {
       try {
         const type = "text/plain";
@@ -21,7 +21,7 @@ export const Congratulation = ({ congratulation, copy, setCopy }) => {
   }
   const classes = `congratulationContainer${copy ? ' active' : ''}`;
   return (
-  <div className={classes} onClick={copyText}>
+  <div className={classes} onClick={copyText} onKeyDown={(e) => {if(e.code === "Enter"){copyText()}}} tabIndex="0">
     <p>{congratulation}</p>
   </div>);
 }

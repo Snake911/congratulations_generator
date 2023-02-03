@@ -14,7 +14,10 @@ export const Header = () => {
         <Link to="/" className='backLink'><img src="/images/arrow.svg" alt="На главную" /></Link> 
         : null
       }
-      <h1>Генератор поздравлений</h1>
+      { window.location.pathname !== '/' ? 
+        <Link to="/"><h1>Генератор поздравлений</h1></Link> 
+        : <h1>Генератор поздравлений</h1>
+      }
     </header>
   );
 }

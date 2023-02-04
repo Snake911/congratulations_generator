@@ -23,5 +23,6 @@ export const Congratulation = ({ congratulation, copy, setCopy }) => {
   return (
   <div className={classes} onClick={copyText} onKeyDown={(e) => {if(e.code === "Enter"){copyText()}}} tabIndex="0">
     <p>{congratulation}</p>
+    <div className="copied">Скопировано</div>
   </div>);
 }

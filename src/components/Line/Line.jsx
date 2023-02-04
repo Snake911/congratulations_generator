@@ -1,7 +1,11 @@
 import './Line.css';
 
 const animationLine = (e) => {
-  e.target.classList.add('active');
+  e.target.classList.remove('active');
+  setTimeout(() => {
+    e.target.classList.add('active'); 
+  }, 10);
+  
 
   e.target.addEventListener('animationend', (e) => {
     e.target.classList.remove('active');

@@ -1,18 +1,16 @@
 [
   {
+    "id": 0,
     "name": "День рождения девушки",
-    "icon": "./images/cake.svg",
-    "icon_alt": "Тортик",
-    "file": "birth_f.json",
     "code": "birth_f",
-    "id": 0
+    "icon": "./images/cake.svg",
+    "icon_alt": "Тортик"    
   },
   {
+    "id": 1,
     "name": "Новый год",
-    "icon": "./images/tree.svg",
-    "icon_alt": "Ёлочка",
-    "file": "new_year.json",
     "code": "new_year",
-    "id": 1
+    "icon": "./images/tree.svg",
+    "icon_alt": "Ёлочка"    
   }
 ]

@@ -8,7 +8,7 @@ import { LineSkeleton } from '../Line/Skeleton';
 import './Generator.css';
 
 export const Generator = (props) => {
-  const [string, setString] = useState(1);
+  const [currentPart, setCurrentPart] = useState(1);
   const [columns, setColumns] = useState([]);
   const [parts, setParts] = useState([]);
   const [congratulation, setCongratulation] = useState('');
@@ -16,44 +16,40 @@ export const Generator = (props) => {
   const [copy, setCopy] = useState(false);
 
   const { file } = useParams();
-  const page = file || 'birth_f';
+  const page = file?.slice(1) || 'birth_f';
 
   const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
+  const newPart = (column) => {
+    let newCurrentPart = currentPart;
+    while(newCurrentPart === currentPart) {
+      newCurrentPart = randomIntFromInterval(1, columns[column].length - 1);
+    }
+    setCurrentPart(newCurrentPart);
+  }
+
   const changeParts = (column) => {
     const newParts = [...parts];
-    let newString = string;
-    while(newString === string) {
-      newString = randomIntFromInterval(1, columns[column].length - 1);
-    }
-    setString(newString)
-    newParts[column][1] = columns[column][string];
+    newPart(column);
+    newParts[column][1] = columns[column][currentPart];
     setParts(newParts);
     setCopy(false);
   }
 
   const changeAllParts = () => {
     columns.forEach((_, column) => {
-      const newParts = [...parts];
-      let newString = string;
-      while(newString === string) {
-        newString = randomIntFromInterval(1, columns[column].length - 1);
-      }
-      setString(newString)
-      newParts[column][1] = columns[column][string];
-      setParts(newParts);
-      setCopy(false);
+      changeParts(column)
     });
   }
 
   useEffect(() => {
-    fetch(`/settings/data.json`)
+    fetch(`/settings/${page}.json`)
     .then(res => res.json())
     .then(res => {
-      setColumns(res[page].strings);
-      setName(res[page].name);
+      setColumns(res.strings);
+      setName(res.name);
     })
     .catch(err => console.error(err));
   }, [page]);

@@ -1,20 +1,32 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
 export const Home = () => {
-  document.title = 'Генератор поздравлений';
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    document.title = 'Генератор поздравлений';
+    fetch(`/settings/data.json`)
+    .then(res => res.json())
+    .then(res => {
+      setData(res);
+    })
+    .catch(err => console.error(err));
+  }, []);
+  
   return (<ul className='menu'>
-    <li>
-      <Link to="/generator/birth_f">
-        <img src="./images/cake.svg" alt="Тортик" width={150} height={150} />
-        <p>День рождения девушки</p>
-      </Link>
-    </li>
-    <li>
-      <Link to="/generator/new_year">
-        <img src="./images/tree.svg" alt="Ёлочка" width={150} height={150} />
-        <p>Новый год</p>
-      </Link>
-      </li>
+    {
+      data.map(item => {
+        return (
+        <li key={item.id}>
+          <Link to={`/generator/:${item.code}`}>
+            <img src={item.icon} alt={item.icon_alt} width={150} height={150} />
+            <p>{item.name}</p>
+          </Link>
+        </li>
+        );
+      })
+    }
   </ul>);
 }

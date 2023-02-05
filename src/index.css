@@ -34,10 +34,11 @@ button {
 
 h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   padding: 0 60px;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .App {
@@ -68,5 +69,10 @@ h1 {
 
   .limiter {
     padding: 0;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: .8rem;
   }
 }

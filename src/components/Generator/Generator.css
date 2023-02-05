@@ -1,8 +1,9 @@
 .generator_page h2 {
   text-align: center;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 2.5rem;
+  text-transform: uppercase;
 }
 
 .generatorAll {
@@ -26,6 +27,12 @@
 }
 
 @media (max-width: 668px) {
+
+  .generator_page h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1.7rem;
+  }
+
   .generatorContainer {
     padding: 26px 10px;
     border-radius: 0px;

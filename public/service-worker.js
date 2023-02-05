@@ -5,6 +5,7 @@ var doCache = true;
 var CACHE_NAME = 'generator';
 
 // Delete old caches that are not our current one!
+// eslint-disable-next-line no-restricted-globals
 self.addEventListener("activate", event => {
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
@@ -15,12 +16,14 @@ self.addEventListener("activate", event => {
             console.log('Deleting cache: ' + key)
             return caches.delete(key);
           }
+          return true;
         }))
       )
   );
 });
 
 // The first time the user starts up the PWA, 'install' is triggered.
+// eslint-disable-next-line no-restricted-globals
 self.addEventListener('install', function(event) {
   if (doCache) {
     event.waitUntil(
@@ -60,6 +63,7 @@ self.addEventListener('install', function(event) {
               settings.map((setting) => {
                 cachedFiles.push(setting.icon);
                 cachedFiles.push(`/settings/${setting.code}.json`);
+                return true;
               });
               cache.addAll(cachedFiles);
             })
@@ -73,6 +77,7 @@ self.addEventListener('install', function(event) {
 
 // When the webpage goes to fetch files, we intercept that request and serve up the matching files
 // if we have them
+// eslint-disable-next-line no-restricted-globals
 self.addEventListener('fetch', function(event) {
     if (doCache) {
       event.respondWith(

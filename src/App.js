@@ -3,6 +3,7 @@ import {
   Routes ,
   Route,
 } from 'react-router-dom';
+import { ErrorPage } from './components/ErrorPage/ErrorPage';
 
 import { Generator } from './components/Generator/Generator';
 import { Header } from './components/Header/Header';
@@ -14,11 +15,12 @@ function App() {
       <div className="limiter">
         <Router>
           <Header />
-          <Routes>
+          <Routes>            
             <Route path="/generator/" element={<Generator />} >
-              <Route path="/generator/:file" element={<Generator />} />
+              <Route path="/generator/:file" element={<Generator />}  errorElement={<ErrorPage />} />
             </Route>          
-            <Route path="/" element={<Home />} />          
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<ErrorPage />} />   
           </Routes>
         </Router>
       </div>

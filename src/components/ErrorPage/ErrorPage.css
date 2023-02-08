@@ -1,0 +1,13 @@
+.ErrorPage {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 150px);
+  gap: 20px;
+}
+
+.ErrorPage h2 {
+  font-size: 46px;
+}

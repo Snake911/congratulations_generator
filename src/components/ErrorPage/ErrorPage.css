@@ -11,3 +11,7 @@
 .ErrorPage h2 {
   font-size: 46px;
 }
+
+.ErrorPage a {
+  text-decoration: underline;
+}

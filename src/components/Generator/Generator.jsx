@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { Congratulation } from '../Congratulation/Congratulation';
 import { Line } from '../Line/Line';
@@ -17,6 +17,8 @@ export const Generator = (props) => {
 
   const { file } = useParams();
   const page = file?.slice(1) || 'birth_f';
+
+  const navigate = useNavigate();
 
   const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -51,8 +53,11 @@ export const Generator = (props) => {
       setColumns(res.strings);
       setName(res.name);
     })
-    .catch(err => console.error(err));
-  }, [page]);
+    .catch(err => {
+      console.error(err);
+      navigate("/404");
+    });
+  }, [navigate, page]);
 
   useEffect(() => {
     document.title = name;

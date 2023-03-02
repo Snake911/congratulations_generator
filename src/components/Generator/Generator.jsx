@@ -13,6 +13,7 @@ export const Generator = (props) => {
   const [parts, setParts] = useState([]);
   const [congratulation, setCongratulation] = useState('');
   const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [copy, setCopy] = useState(false);
 
   const { file } = useParams();
@@ -52,6 +53,7 @@ export const Generator = (props) => {
     .then(res => {
       setColumns(res.strings);
       setName(res.name);
+      setDescription(res.description);
     })
     .catch(err => {
       console.error(err);
@@ -60,8 +62,9 @@ export const Generator = (props) => {
   }, [navigate, page]);
 
   useEffect(() => {
-    document.title = name;
-  }, [name]);
+    document.title = `Генератор поздравлений | ${name}`;
+    document.querySelector('meta[name="description"]').setAttribute("content", description);
+  }, [description, name]);
 
   useEffect(() => {
       const result = [];

@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow: 
+Sitemap: https://snake911.tmweb.ru/sitemap.xml
+Host: snake911.tmweb.ru

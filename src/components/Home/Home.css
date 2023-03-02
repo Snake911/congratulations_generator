@@ -10,7 +10,6 @@
 }
 
 .menu li {
-  height: 320px;
   width: calc(50% - 16px);
 }
 
@@ -36,14 +35,12 @@
 
 @media (max-width: 1024px) {
   .menu li {
-    height: 300px;
     width: calc(50% - 16px);
   }
 }
 
 @media (max-width: 668px) {
   .menu li {
-    height: 240px;
     width: 100%;
   }
 }

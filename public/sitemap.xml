@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://snake911.tmweb.ru/</loc>
+	<lastmod>2023-03-01T17:33:31+01:00</lastmod>
+	<priority>1</priority>
+</url>
+<url>
+	<loc>https://snake911.tmweb.ru/generator/</loc>
+	<lastmod>2023-03-01T17:33:31+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://snake911.tmweb.ru/generator/:birth_f</loc>
+	<lastmod>2023-03-01T17:33:31+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://snake911.tmweb.ru/generator/:new_year</loc>
+	<lastmod>2023-03-01T17:33:31+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+</urlset>

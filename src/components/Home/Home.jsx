@@ -8,6 +8,7 @@ export const Home = () => {
   useEffect(() => {
     document.title = 'Генератор поздравлений';
     document.querySelector('meta[name="description"]').setAttribute("content", "Различные генераторы поздравлений");
+    window.ym(92654360, 'hit', window.location.href);
     fetch(`/settings/data.json`)
     .then(res => res.json())
     .then(res => {

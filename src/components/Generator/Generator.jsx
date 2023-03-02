@@ -48,6 +48,7 @@ export const Generator = (props) => {
   }
 
   useEffect(() => {
+    window.ym(92654360, 'hit', window.location.href);
     fetch(`/settings/${page}.json`)
     .then(res => res.json())
     .then(res => {

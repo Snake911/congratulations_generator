@@ -17,7 +17,7 @@ export const Generator = (props) => {
   const [copy, setCopy] = useState(false);
 
   const { file } = useParams();
-  const page = file?.slice(1) || 'birth_f';
+  const page = file || 'birth_f';
 
   const navigate = useNavigate();
 

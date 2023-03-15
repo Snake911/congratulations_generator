@@ -22,7 +22,7 @@ export const Home = () => {
       data.map(item => {
         return (
         <li key={item.id}>
-          <Link to={`/generator/:${item.code}`}>
+          <Link to={`/generator/${item.code}`}>
             <img src={item.icon} alt={item.icon_alt} width={150} height={150} />
             <p>{item.name}</p>
           </Link>

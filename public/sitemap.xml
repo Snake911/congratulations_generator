@@ -11,12 +11,12 @@
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://snake911.tmweb.ru/generator/:birth_f</loc>
+	<loc>https://snake911.tmweb.ru/generator/birth_f</loc>
 	<lastmod>2023-03-01T17:33:31+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://snake911.tmweb.ru/generator/:new_year</loc>
+	<loc>https://snake911.tmweb.ru/generator/new_year</loc>
 	<lastmod>2023-03-01T17:33:31+01:00</lastmod>
 	<priority>0.8</priority>
 </url>

@@ -1,3 +1,5 @@
+ErrorDocument 404 /404
+
 <ifModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /

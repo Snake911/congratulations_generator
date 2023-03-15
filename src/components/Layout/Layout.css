@@ -1,0 +1,26 @@
+.App {
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.limiter {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 1024px) {
+  .App {
+    padding: 20px 0;
+  }
+
+  .limiter {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 668px) {
+  .limiter {
+    padding: 0;
+  }
+}
